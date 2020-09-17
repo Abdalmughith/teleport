@@ -13,10 +13,6 @@ module.exports = {
                     model: Room,
                     as: 'Rooms'
                 }],
-                order: [
-                    ['createdAt', 'DESC'],
-                    [{ model: Hotel, as: 'hotels' }, 'createdAt', 'DESC'],
-                ],
             })
             .then((hotels) => res.status(200).send(hotels))
             .catch((error) => { res.status(400).send(error); });
