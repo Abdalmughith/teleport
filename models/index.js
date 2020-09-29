@@ -5,6 +5,7 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const db = {};
+require('dotenv').config()
 
 
 
@@ -12,6 +13,10 @@ const db = {};
 let sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
   host: process.env.DB_HOSTNAME,
     dialect: 'mysql',
+  encoding: 'utf8',
+  charset: 'utf8mb4',
+  logging: false
+
     // underscored: true
 });
 
